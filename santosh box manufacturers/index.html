@@ -1,0 +1,736 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santosh Box Manufacturers - Premium Packaging Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: #1c2526;
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: 60px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+            filter: brightness(0) invert(1);
+        }
+
+        .logo img:hover {
+            transform: scale(1.1);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 400;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .cart-btn {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 1rem;
+            cursor: pointer;
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .cart-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .hero {
+            background: url('https://images.unsplash.com/photo-1516321497487-e288fb19713f') no-repeat center/cover;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-content {
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero .cta-btn {
+            background: #ffffff;
+            color: #121212;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .hero .cta-btn:hover {
+            background: #e0e0e0;
+            transform: scale(1.05);
+        }
+
+        #products {
+            max-width: 1280px;
+            margin: 4rem auto;
+            padding: 2rem;
+        }
+
+        #products h1 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        #products h1::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: #ffffff;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            padding: 1rem;
+        }
+
+        .product-card {
+            background: #1c2526;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            filter: grayscale(50%);
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+
+        .product-card h3 {
+            font-size: 1.4rem;
+            padding: 1.2rem;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .product-card p {
+            padding: 0 1.2rem 1rem;
+            color: #b0b0b0;
+            font-size: 0.95rem;
+        }
+
+        .product-card .price {
+            font-weight: 600;
+            color: #ffffff;
+            padding: 0 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .product-card .add-to-cart {
+            display: block;
+            background: #ffffff;
+            color: #121212;
+            text-align: center;
+            padding: 0.9rem;
+            margin: 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .product-card .add-to-cart:hover {
+            background: #e0e0e0;
+        }
+
+        section {
+            max-width: 1280px;
+            margin: 4rem auto;
+            padding: 3rem;
+            background: #1c2526;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+            animation: slideInUp 0.8s ease forwards;
+        }
+
+        section h1 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        section h1::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: #ffffff;
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+        }
+
+        section p {
+            color: #b0b0b0;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        #about .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        #about .text-content {
+            flex: 1;
+        }
+
+        #about .image-content {
+            flex: 0 0 auto;
+        }
+
+        #about .image-content img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        #about .image-content img:hover {
+            transform: scale(1.05);
+        }
+
+        #gallery .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 1.5rem 0;
+        }
+
+        #gallery .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        #gallery .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        #gallery .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            filter: grayscale(50%);
+        }
+
+        #gallery .gallery-item:hover img {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+
+        #gallery .gallery-caption {
+            padding: 1rem;
+            background: #1c2526;
+            text-align: center;
+        }
+
+        #gallery .gallery-caption h3 {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        #gallery .gallery-caption p {
+            font-size: 0.95rem;
+            color: #b0b0b0;
+        }
+
+        #gallery .gallery-info {
+            margin-top: 2.5rem;
+            text-align: center;
+        }
+
+        #gallery .gallery-info h2 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        #gallery .gallery-info .cta-btn {
+            display: inline-block;
+            background: #ffffff;
+            color: #121212;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        #gallery .gallery-info .cta-btn:hover {
+            background: #e0e0e0;
+            transform: scale(1.05);
+        }
+
+        #testimonials {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .testimonial-slide p {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-slide span {
+            display: block;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: background 0.3s ease;
+        }
+
+        .slider-nav:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        #contact .map-container {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        #contact .map-container img {
+            max-width: 100%;
+            border-radius: 12px;
+            border: 2px solid #ffffff;
+        }
+
+        @keyframes slideInUp {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            background: #1c2526;
+            color: #b0b0b0;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #1c2526;
+                padding: 1.5rem;
+                border-radius: 8px;
+                margin-top: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a, .cart-btn {
+                width: 100%;
+                text-align: center;
+                padding: 1rem;
+            }
+
+            .hamburger {
+                display: block;
+                position: absolute;
+                top: 1.8rem;
+                right: 2rem;
+            }
+
+            .hero {
+                height: 400px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            section {
+                margin: 2rem 1rem;
+                padding: 2rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #about .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #about .image-content img {
+                max-width: 150px;
+            }
+
+            #gallery .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #gallery .gallery-item img {
+                height: 200px;
+            }
+
+            #gallery .gallery-info h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="c:\Users\Mudit Nagpal\OneDrive\Apps\expandable-animated-card-slider\expandable-animated-card-slider\dist\python source code\lab mse 2\santosh box manufacturers\Screenshot 2025-06-05 134714-Photoroom (1).png" alt="Santosh Box Manufacturers Logo">
+                <span>Santosh Box Manufacturers</span>
+            </div>
+            <div class="hamburger">☰</div>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#products">Shop</a>
+                
+                <a href="#gallery">Gallery</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Premium Cycle Parts Packaging Solutions</h1>
+            <p>Craft your brand’s identity with our high-quality, custom-designed boxes tailored to your business needs.</p>
+            <a href="#products" class="cta-btn">Explore Our Products</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="about-content">
+            <div class="text-content">
+                <h1>About Us</h1>
+                <p>At Santosh Box Manufacturers,<br> we pride ourselves on delivering innovative, sustainable, <br>and custom packaging solutions.<br> With years of expertise, we cater to diverse industries,<br> ensuring a every box meets the highest standards of quality and design.</p>
+            </div>
+            <div class="image-content">
+                <img src="C:\Users\Mudit Nagpal\OneDrive\Apps\expandable-animated-card-slider\expandable-animated-card-slider\dist\python source code\lab mse 2\santosh box manufacturers\image-Photoroom - 2025-06-05T135541.911.png" alt="Box Image" height="200" width="200">
+            </div>
+        </div>
+    </section>
+
+    <section id="products">
+        <h1>Our Products</h1>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="C:\Users\Mudit Nagpal\OneDrive\Apps\expandable-animated-card-slider\expandable-animated-card-slider\dist\python source code\lab mse 2\santosh box manufacturers\3.jpg" alt="Corrugated Box">
+                <h3>Hacksaw Blade</h3>
+                <p>Personalized designs to elevate your brand’s presence.</p>
+              
+                <a href="#" class="add-to-cart">Add to Cart</a>
+            </div>
+            <div class="product-card">
+                <img src="C:\Users\Mudit Nagpal\OneDrive\Apps\expandable-animated-card-slider\expandable-animated-card-slider\dist\python source code\lab mse 2\santosh box manufacturers\4.jpg" alt="Custom Carton">
+                <h3>Tractor Parts Carton</h3>
+                <p>Robust and reliable for secure shipping and storage.</p>
+             
+                <a href="#" class="add-to-cart">Add to Cart</a>
+            </div>
+            <div class="product-card">
+                <img src="C:\Users\Mudit Nagpal\OneDrive\Apps\expandable-animated-card-slider\expandable-animated-card-slider\dist\python source code\lab mse 2\santosh box manufacturers\5.jpg" alt="Eco-Friendly Box">
+                <h3>Cycle Parts Packaging</h3>
+                <p>Sustainable solutions for a greener future.</p>
+               
+                <a href="#" class="add-to-cart">Add to Cart</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h1>Our Craft, Your Story</h1>
+        <p>We pour our heart into every box we create at Santosh Box Manufacturers. Each design tells a story of quality, care, and innovation—crafted to protect your products and elevate your brand. Take a peek at some of our favorite projects below!</p>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="C:\Users\Mudit Nagpal\OneDrive\Apps\expandable-animated-card-slider\expandable-animated-card-slider\dist\python source code\lab mse 2\santosh box manufacturers\1.jpg" alt="Heavy-Duty Corrugated Box">
+                <div class="gallery-caption">
+                    <h3>Rugged Corrugated Boxes</h3>
+                    <p>Built tough to keep cycle parts safe during shipping, no matter the journey.</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="C:\Users\Mudit Nagpal\OneDrive\Apps\expandable-animated-card-slider\expandable-animated-card-slider\dist\python source code\lab mse 2\santosh box manufacturers\2.jpg" alt="Custom Branded Carton">
+                <div class="gallery-caption">
+                    <h3>Your Brand, Your Way</h3>
+                    <p>Custom cartons that make your brand stand out on every shelf.</p>
+                </div>
+            </div>
+         
+     
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f" alt="Custom Cycle Parts Box">
+                <div class="gallery-caption">
+                    <h3>Precision for Cycle Parts</h3>
+                    <p>Tailor-made packaging to fit every nut, bolt, and frame perfectly.</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-info">
+            <h2>How We Bring Your Vision to Life</h2>
+            <p>We’re more than just box makers—we’re problem-solvers who love turning ideas into reality. From sketching designs to choosing sustainable materials and testing for durability, we work closely with you to create packaging that’s as unique as your brand. Ready to start your project? <a href="#contact" class="cta-btn">Let’s Chat!</a></p>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <h1>What Our Clients Say</h1>
+        <div class="testimonial-slider" id="testimonialSlider">
+            <div class="testimonial-slide">
+                <p>“Exceptional packaging quality—keeps our cycle parts safe and secure!”</p>
+                <span>- Great India Machine Tools</span>
+            </div>
+            <div class="testimonial-slide">
+                <p>“Perfect fit for our cycle components—precision in every detail!”</p>
+                <span>– A-One Cycle Ltd.</span>
+            </div>
+            <div class="testimonial-slide">
+                <p>“Consistently high-quality packaging that meets industry standards.”</p>
+                <span>– Sovereign Exports</span>
+            </div>
+            <div class="testimonial-slide">
+                <p>“User-friendly design makes handling and storage effortless.”</p>
+                <span>– Shiv Bandhu Udyog Regd.</span>
+            </div>
+        </div>
+        <button class="slider-nav prev" onclick="moveSlide(-1)">❮</button>
+        <button class="slider-nav next" onclick="moveSlide(1)">❯</button>
+    </section>
+
+    <section id="contact">
+        <h1>Get in Touch</h1>
+        <p>Need custom packaging or have questions? Contact us today to discuss your requirements!</p>
+        <p>Email: vikaasnagpal26@gmail.com | Phone: +91 946-437-2606</p>
+        <div class="map-container">
+            <h2>Our Location</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4917.677827804471!2d75.85230573919705!3d30.9002903538984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzDCsDU0JzAxLjIiTiA3NcKwNTEnMTUuOCJF!5e0!3m2!1sen!2sin!4v1749118841227!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Santosh Box Manufacturers. Crafted with care. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const slider = document.getElementById('testimonialSlider');
+
+        function moveSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) {
+                currentSlide = slides.length - 1;
+            } else if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            }
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        setInterval(() => {
+            moveSlide(1);
+        }, 3000);
+    </script>
+</body>
+</html>
